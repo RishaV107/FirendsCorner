@@ -8,6 +8,8 @@ import helmet from "helmet";
 import path from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
+import authRoutes from "./routes/auth.js";
+import { register } from "./controllers/auth.js";
 
 /* CONFIGRATIONS */
 
@@ -47,3 +49,9 @@ mongoose
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   })
   .catch((err) => console.log(`${err} did not connect`));
+
+/* ROUTE WITH FILES */
+app.post("/auth/register", upload.single("pictures"), register);
+
+/* ROUTES */
+app.use("/auth", authRoutes);
