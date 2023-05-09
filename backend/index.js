@@ -9,6 +9,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 import { register } from "./controllers/auth.js";
 
 /* CONFIGRATIONS */
@@ -55,3 +56,4 @@ app.post("/auth/register", upload.single("pictures"), register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
