@@ -1,7 +1,18 @@
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import Homepage from "./scenes/HomePage";
+import LoginPage from "./scenes/LoginPage";
+import ProfilePage from "./scenes/ProfilePage";
+
 function App() {
   return (
     <>
-      <h1>Friends Connect</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/profile/:userId" element={<ProfilePage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
