@@ -9,7 +9,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.js";
+import userRoutes from "./routes/user.js";
 import { register } from "./controllers/auth.js";
+import { users, posts } from "./data/index.js";
+import User from "./models/User.js";
+import Post from "./models/post.js";
 
 /* CONFIGRATIONS */
 
@@ -47,6 +51,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+    /* ADD DATA ONE TIME */
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
   .catch((err) => console.log(`${err} did not connect`));
 
@@ -55,3 +62,4 @@ app.post("/auth/register", upload.single("pictures"), register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
