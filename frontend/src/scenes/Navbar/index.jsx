@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { setLogout, setMode } from "../../state";
@@ -7,13 +7,13 @@ import {
   FormControl,
   IconButton,
   InputBase,
-  Menu,
   MenuItem,
   Select,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   Close,
   DarkMode,
@@ -40,12 +40,8 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  //   const fullName = `${user.firstName} ${user.lastName}`;
-  const fullName = `${"Rishav"} ${"Singh"}`;
-
-  useEffect(() => {
-    console.log(isMobileMenuToggled);
-  }, [isMobileMenuToggled]);
+  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${"Rishav"} ${"Singh"}`;
 
   return (
     <>
@@ -80,7 +76,7 @@ const Navbar = () => {
             </FlexBetween>
           )}
         </FlexBetween>
-        {/* Desktop Navbar*/}
+        {/* Desktop Navbar */}
         {isNonMobileScreens ? (
           <FlexBetween gap="2rem">
             <IconButton onClick={() => dispatch(setMode())}>
@@ -124,7 +120,7 @@ const Navbar = () => {
           <IconButton
             onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
           >
-            <Menu />
+            <MenuIcon />
           </IconButton>
         )}
         {/* Mobile Nav */}
