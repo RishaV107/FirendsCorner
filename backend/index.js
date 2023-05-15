@@ -58,7 +58,7 @@ mongoose
   .catch((err) => console.log(`${err} did not connect`));
 
 /* ROUTE WITH FILES */
-app.post("/auth/register", upload.single("pictures"), register);
+app.post("/auth/register", upload.single("picture"), register);
 
 /* ROUTES */
 app.use("/auth", authRoutes);
