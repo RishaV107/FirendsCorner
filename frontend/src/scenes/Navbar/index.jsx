@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { setLogout, setMode } from "../../state";
@@ -40,8 +40,8 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  // const fullName = `${user.firstName} ${user.lastName}`;
-  const fullName = `${"Rishav"} ${"Singh"}`;
+  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${"Rishav"} ${"Singh"}`;
 
   return (
     <>
