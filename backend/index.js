@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/user.js";
+import postRoutes from "./routes/posts.js";
 import { register } from "./controllers/auth.js";
 import { users, posts } from "./data/index.js";
 import User from "./models/User.js";
@@ -63,3 +64,4 @@ app.post("/auth/register", upload.single("picture"), register);
 /* ROUTES */
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
+app.use("/posts", postRoutes);
