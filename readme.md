@@ -39,4 +39,4 @@ Contributions to the project are always welcome. If you find a bug or have a fea
 
 ##### Screen 2
 
-- ![Screen 2](./backend/public/assets/Screen2.png)
+![Screen 2](./backend/public/assets/Screen2.png)
